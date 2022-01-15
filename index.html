@@ -1,37 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Highland Huskies Website</title>
-        <meta name="somthing"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styl5e.css" />
+<html>
+<head>
+<title>Programmer's Playground</title>
+<link href="ResourceWebStyle.css" rel="stylesheet" type="text/css">
+</head>
+
 <body>
-    
-    
-    
-    
-    
-<p>Date/Time: <span id="datetime"></span></p>
+<div id="testBox1"></div>
+<div id="testBox2"></div>
+<input id="commandInput" type="text" placeholder="Enter A Command.."/>
+<button id="confirmButton" onclick="command()">Confirm</button>
 
 <script>
-var dt = new Date();
-document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
-    
+        var i = setInterval(function() {
+    if(document.body.style.backgroundColor === "darkred") {
+    document.body.style.backgroundColor = "darkblue";
+    } else {
+        document.body.style.backgroundColor = "darkred";
+    }
+ }, 1000);
 </script>
-    
-    
-    <div="YourMom">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname"><br>
-        </div>
-        
-        
 
-    
-    
-    
-</body>
-</html>
+<script>
+    // setInterval(function() {
+        // if(document.getElementById("testBox1").style.right == "150px") {
+        //   document.getElementById("testBox1").style.right = "250px";
+        // } else {
+        //   document.getElementById("testBox1").style.right = "150px";
+        // }
+    //  }, 1000);
+    </script>
+
+<script>
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+        alert('Left was pressed');
+    }
+    else if(event.keyCode == 39) {
+        alert('Right was pressed');
+    }
+});
+</script>
+
+<script>
+    function command() {
+let userInputValue = document.getElementById("commandInput").value;
+const testBox1BackgroundColor = document.getElementById("testBox1").style.backgroundColor;
+colorChanged = userInputValue.replace('/','').replace('c', '').replace('o','').replace('l','').replace('o','').replace('r','').replace(' ','');
+backgroundColorChanged = userInputValue.replace('/','').replace('b', '').replace('a','').replace('c','').replace('k','').replace('g','').replace('r','').replace('o','').replace('u','').replace('n','').replace('d','').replace('-','').replace('c','').replace('o','').replace('l','').replace('o','').replace('r','').replace(' ','');
+if(testBox1BackgroundColor === colorChanged) {
+alert("Color Already In Use!");
+}
+if(userInputValue.includes("/color")) {
+document.getElementById("testBox1").style.backgroundColor = colorChanged;
+} else if(userInputValue.includes("/background-color")) {
+document.body.style.backgroundColor = backgroundColorChanged;
+} else if(userInputValue === "/background-flash off") {
+    clearInterval(i);
+}
+}   
+let countNum = 0;
+function counter() {
+    countNun++;
