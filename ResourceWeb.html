@@ -1,64 +1,136 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Programmer's Playground</title>
-<link href="ResourceWebStyle.css" rel="stylesheet" type="text/css">
-</head>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	   <link rel="stylesheet" href="ResourceWebStyle.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4371725031983124"
+     crossorigin="anonymous"></script>
+  </head>
+  <body>
+      
+    <!-- - IDEA: Create objects that can be dragged, highlighted, interactive properties, and drop into folder. -->
+    <div class="header">
+  <a href="ResourceWeb.html" class="logoButton">Bluewood |</a>
+  <a href="ResourceWebSoftware.html" class="Software">Software</a>
+  <a href="#default" class="About">About</a>
+  </div>
+    <div id="testBox1"></div>
+    <input id="commandInput" type="text" placeholder="Enter Your Command Here.." />
+    <button id="confirmButton" onclick="command()">Confirm</button>
+    <button id="ConsoleReVis" onclick="consoleReVisinate()" onmouseover="consoleReVisinateButton1()" onmouseleave="consoleReVisinateButton2()"></button>
 
-<body>
-<div id="testBox1"></div>
-<div id="testBox2"></div>
-<input id="commandInput" type="text" placeholder="Enter A Command.."/>
-<button id="confirmButton" onclick="command()">Confirm</button>
+    <script>
+        function consoleReVisinate() {
+            if (document.getElementById("commandInput").style.visibility === 'visible' && document.getElementById("confirmButton").style.visibility === 'visible') {
+                document.getElementById("commandInput").style.visibility = 'hidden';
+                document.getElementById("confirmButton").style.visibility = 'hidden';
+            } else {
+                document.getElementById("commandInput").style.visibility = 'visible';
+                document.getElementById("confirmButton").style.visibility = 'visible';
+            }
+        }
 
-<script>
-        var i = setInterval(function() {
-    if(document.body.style.backgroundColor === "darkred") {
-    document.body.style.backgroundColor = "darkblue";
-    } else {
-        document.body.style.backgroundColor = "darkred";
-    }
- }, 1000);
-</script>
+        function consoleReVisinateButton1() {
+            document.getElementById("ConsoleReVis").style.opacity = '100%';
+            document.getElementById("commandInput").style.bottom = 20 + "px";
+            document.getElementById("confirmButton").style.bottom = 20 + "px";
+        }
 
-<script>
-    // setInterval(function() {
+        function consoleReVisinateButton2() {
+            document.getElementById("ConsoleReVis").style.opacity = '0%';
+            document.getElementById("commandInput").style.bottom = 5 + "px";
+            document.getElementById("confirmButton").style.bottom = 5 + "px";
+        }
+    </script>
+
+    <script>
+        // variable to store our intervalID
+        let nIntervId;
+
+        function changeBackroundColor() {
+
+            // check if already an interval has been set up
+            if (!nIntervId) {
+                nIntervId = setInterval(backgroundColorFlashInterval, 1000);
+            }
+        }
+
+        function backgroundColorFlashInterval() {
+            if (document.body.style.backgroundColor === "darkred") {
+                document.body.style.backgroundColor = "darkblue";
+            } else {
+                document.body.style.backgroundColor = "darkred";
+            }
+        }
+
+        function backgroundColorFlashIntervalStop() {
+            clearInterval(nIntervId);
+            // release our intervalID from the variable
+            nIntervId = null;
+        }
+    </script>
+
+    <script>
+        // setInterval(function() {
         // if(document.getElementById("testBox1").style.right == "150px") {
         //   document.getElementById("testBox1").style.right = "250px";
         // } else {
         //   document.getElementById("testBox1").style.right = "150px";
         // }
-    //  }, 1000);
+        //  }, 1000);
     </script>
 
-<script>
-document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 37) {
-        alert('Left was pressed');
-    }
-    else if(event.keyCode == 39) {
-        alert('Right was pressed');
-    }
-});
-</script>
+    <script>
+        function openDocumentationWindow() {
+            windowObjectReference = window.open(
+                "file:///C:/Users/rocko/Desktop/WebsiteStuff/Data/DocumentationPage.html", "_blank");
+        }
 
-<script>
-    function command() {
-let userInputValue = document.getElementById("commandInput").value;
-const testBox1BackgroundColor = document.getElementById("testBox1").style.backgroundColor;
-colorChanged = userInputValue.replace('/','').replace('c', '').replace('o','').replace('l','').replace('o','').replace('r','').replace(' ','');
-backgroundColorChanged = userInputValue.replace('/','').replace('b', '').replace('a','').replace('c','').replace('k','').replace('g','').replace('r','').replace('o','').replace('u','').replace('n','').replace('d','').replace('-','').replace('c','').replace('o','').replace('l','').replace('o','').replace('r','').replace(' ','');
-if(testBox1BackgroundColor === colorChanged) {
-alert("Color Already In Use!");
-}
-if(userInputValue.includes("/color")) {
-document.getElementById("testBox1").style.backgroundColor = colorChanged;
-} else if(userInputValue.includes("/background-color")) {
-document.body.style.backgroundColor = backgroundColorChanged;
-} else if(userInputValue === "/background-flash off") {
-    clearInterval(i);
-}
-}   
-let countNum = 0;
-function counter() {
-    countNun++;
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 37) {
+                alert('Left was pressed');
+            } else if (event.keyCode == 39) {
+                alert('Right was pressed');
+            }
+        });
+    </script>
+
+    <script>
+        function command() {
+            let userInputValue = document.getElementById("commandInput").value;
+            let userInputValueForCommands = userInputValue.toLowerCase();
+            console.log(userInputValueForCommands);
+            const testBox1BackgroundColor = document.getElementById("testBox1").style.backgroundColor;
+            colorChanged = userInputValue.replace('/square-color', '')
+            backgroundColorChanged = userInputValue.replace('/background-color', '');
+            commandInputColorChanged = userInputValue.replace('/command-color', '');
+            if (testBox1BackgroundColor === colorChanged) {
+                alert("Color Already In Use!");
+            }
+            if (userInputValueForCommands.startsWith("/square-color")) {
+                document.getElementById("testBox1").style.backgroundColor = colorChanged;
+            } else if (userInputValueForCommands.startsWith("/background-color")) {
+                document.body.style.backgroundColor = backgroundColorChanged;
+            } else if (userInputValueForCommands === "/background-flash off") {
+                clearInterval(nIntervId);
+                nIntervId = null;
+            } else if (userInputValueForCommands === "/background-flash on") {
+                // Code To Start It
+                changeBackroundColor();
+            } else if (userInputValueForCommands.startsWith("/command-color")) {
+                document.getElementById("commandInput").style.color = commandInputColorChanged;
+            } else if (userInputValueForCommands === "/open documentation" || userInputValueForCommands ===
+                "/open docs") {
+                openDocumentationWindow();
+            } else if (userInputValueForCommands === "/hide console") {
+                document.getElementById("commandInput").style.visibility = 'hidden';
+                document.getElementById("confirmButton").style.visibility = 'hidden';
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>
+
