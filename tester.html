@@ -11,18 +11,21 @@
       <a href="ResourceWebSoftware.html" class="Software">Software</a>
       <div class="softwareSubHeader">Software made for you</div>
       <div class="sideBarForSoftwareApps">
-          
           <a href="tester.html" id="blueWoodIDEAboutOption">About The Software</a>
           <hr>
-          <a href="tester.html" id="blueWoodIDEInstallationOption" onclick="blueWoodIDEInstallationOptionClicked()">Install Bluewood IDE</a>
+          <a id="blueWoodIDEInstallationOption" onclick="scrollToInstallationProcessForBluewoodIDE()">Install Bluewood IDE</a>
           <hr>
           
       </div>
-      <p id="aboutBlueWoodIDEText">     Bluewood IDE is a code editor used for programming with an IDE made for you. What makes this IDE so special is it's customization & personalization features, such as Dark Mode & Light Mode, but even customizable down to what the color of your code is. Not to overwhelm you with all of it, but it does make coding a lot better and much more comfortbale. Not only do those features make it so special, it even has many features that will stand out to you other than customization & personalization. For example, autosave is great for when you're constantly switching from IDE to program.</p>
+    <div id="middle">Scroll To This Text.</div>
+      <h1 id="headerForAboutBluewoodIDE">THIS IS A HEADER
+      <p id="aboutBlueWoodIDEText">Bluewood IDE is a code editor used for programming with an IDE made for you. What makes this IDE so special is it's customization & personalization features, such as Dark Mode & Light Mode, but even customizable down to what the color of your code is. Not to overwhelm you with all of it, but it does make coding a lot better and much more comfortbale. Not only do those features make it so special, it even has many features that will stand out to you other than customization & personalization. For example, autosave is great for when you're constantly switching from IDE to program.</p>
       <script>
-              function blueWoodIDEInstallationOptionClicked() {
-                  document.body.scrollTop = 200;
-                  
+              function scrollToInstallationProcessForBluewoodIDE() {
+                  document.getElementById('middle').scrollIntoView();
+              }
+              function scrollToAboutBluewoodIDE() {
+                  document.getElementById('aboutBlueWoodIDEText').scrollIntoView();
               }
           </script>
     </body>
