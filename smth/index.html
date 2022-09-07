@@ -1,69 +1,428 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
-  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <style>
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 13px;
-      display: flex;
-      flex-direction: column;
-      max-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    .members-count,
-    .members-list,
-    .messages {
-      border: 1px solid #e4e4e4;
-      padding: 15px;
-      margin-bottom: 15px;
-    }
-
-    .messages {
-      flex-shrink: 1;
-      overflow: auto;
-    }
-
-    .message {
-      padding: 5px 0;
-    }
-    .message .member {
-      display: inline-block;
-    }
-
-    .member {
-      padding-right: 10px;
-      position: relative;
-    }
-
-    .message-form {
-      display: flex;
-      flex-shrink: 0;
-    }
-    .message-form__input {
-      flex-grow: 1;
-      border: 1px solid #dfdfdf;
-      padding: 10px 15px;
-      font-size: 16px;
-    }
-    .message-form__button {
-      margin: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="members-count">-</div>
-  <div class="members-list">-</div>
-  <div class="messages"></div>
-  <form class="message-form" onsubmit="return false;">
-    <input class="message-form__input" placeholder="Type a message.." type="text"/>
-    <input class="message-form__button" value="Send" type="submit"/>
-  </form>
-  <script src="./script.js"></script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+ 
+        <title>Task Page</title>
+        <meta name="description" content="Square Surge" />
+        
+    </head>
+    <body>
+      <script>
+      var num = 0;
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+        setInterval(function() {
+            const newDiv = document.createElement("div");
+            document.body.appendChild(newDiv);
+            newDiv.style.position = "absolute";
+            newDiv.style.left = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.top = Math.floor(Math.random() * 99)+'%';
+            newDiv.style.width = 75+'px';
+            newDiv.style.height = 75+'px';
+            num++;
+            const newText = document.createElement("h2");
+            newDiv.appendChild(newText);
+            newText.innerHTML = num;
+            
+            if(Math.floor(Math.random() * 6) == 0) {
+                newDiv.style.backgroundColor = 'red';
+            } else if(Math.floor(Math.random() * 6) == 1) {
+                newDiv.style.backgroundColor = 'orange';
+            } else if(Math.floor(Math.random() * 6) == 2) {
+                newDiv.style.backgroundColor = 'yellow';
+            } else if(Math.floor(Math.random() * 6) == 3) {
+                newDiv.style.backgroundColor = 'limegreen';
+            } else if(Math.floor(Math.random() * 6) == 4) {
+                newDiv.style.backgroundColor = 'skyblue';
+            } else if(Math.floor(Math.random() * 6) == 5) {
+                newDiv.style.backgroundColor = 'purple';
+            } else {
+                newDiv.style.backgroundColor = 'grey';
+            }
+            
+            
+        }, 1);
+    </script>  
+    
+    <style>
+        h2 {
+            color: white;
+            font-family: Comic Sans MS;
+            margin-left: 17.5px;
+        }
+    </style>
+    
+    </body>
+    
 </html>
