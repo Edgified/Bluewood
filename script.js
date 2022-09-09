@@ -59,8 +59,9 @@ drone.on('error', error => {
 });
 
 function getRandomName() {
+  alert("hi ava");
   const adjs = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"];
-  const nouns = [document.getElementById("nameBox").value];
+  const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
   return (
     adjs[Math.floor(Math.random() * adjs.length)] +
     "_" +
