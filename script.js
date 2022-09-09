@@ -33,6 +33,7 @@ drone.on('open', error => {
   room.on('member_join', member => {
     members.push(member);
     updateMembersDOM();
+    document.title = document.getElementsByClass("members-count").value;
   });
 
   room.on('member_leave', ({id}) => {
