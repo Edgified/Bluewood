@@ -65,9 +65,8 @@ function getRandomName() {
   alert(document.getElementById("nameBox").value);
   const adjs = ["gay", "dumb", "stupid", "pointy"];
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
-  username = document.getElementById("nameBox").value;
   return (
-    document.getElementById("nameBox").value
+    "Rocky"
   );
 }
 
@@ -119,7 +118,7 @@ function updateMembersDOM() {
 function createMessageElement(text, member) {
   const el = document.createElement('div');
   el.appendChild(createMemberElement(member));
-  el.appendChild(document.createTextNode(username + text));
+  el.appendChild(document.createTextNode(text));
   el.className = 'message';
   return el;
 }
