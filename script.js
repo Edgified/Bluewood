@@ -117,7 +117,7 @@ function updateMembersDOM() {
 
 function createMessageElement(text, member) {
   const el = document.createElement('div');
-  el.appendChild(createMemberElement(member));
+  el.appendChild(createMemberElement("worky"));
   el.appendChild(document.createTextNode(text));
   el.className = 'message';
   return el;
