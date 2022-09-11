@@ -62,7 +62,7 @@ drone.on('error', error => {
 });
 
 function getRandomName() {
-  alert(document.getElementById("nameBox").value);
+  name = document.getElementById("nameBox").value;
   const adjs = ["gay", "dumb", "stupid", "pointy"];
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
   return (
@@ -101,7 +101,7 @@ function sendMessage() {
 function createMemberElement(member) {
   const { name, color } = member.clientData;
   const el = document.createElement('div');
-  el.appendChild(document.createTextNode("worky"));
+  el.appendChild(document.createTextNode(name));
   el.className = 'member';
   el.style.color = color;
   return el;
