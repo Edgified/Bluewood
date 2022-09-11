@@ -61,6 +61,7 @@ drone.on('error', error => {
 
 function getRandomName() {
   alert(document.getElementById("nameBox").value);
+  alert(name);
   const adjs = ["gay", "dumb", "stupid", "pointy"];
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
   return (
