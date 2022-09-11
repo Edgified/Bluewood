@@ -2,6 +2,8 @@
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = '4cNswoNqM2wVFHPg';
 
+var username = "EnterName1";
+
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
     name: getRandomName(),
@@ -63,6 +65,7 @@ function getRandomName() {
   alert(document.getElementById("nameBox").value);
   const adjs = ["gay", "dumb", "stupid", "pointy"];
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
+  username = document.getElementById("nameBox").value;
   return (
     document.getElementById("nameBox").value
   );
@@ -116,7 +119,7 @@ function updateMembersDOM() {
 function createMessageElement(text, member) {
   const el = document.createElement('div');
   el.appendChild(createMemberElement(member));
-  el.appendChild(document.createTextNode(text));
+  el.appendChild(document.createTextNode(username + text));
   el.className = 'message';
   return el;
 }
