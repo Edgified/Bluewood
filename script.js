@@ -64,7 +64,8 @@ function getRandomName() {
   const adjs = ["gay", "dumb", "stupid", "pointy"];
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
   return (
-    document.getElementById("nameBox").value;
+    // document.getElementById("nameBox").value;
+    "Rocky";
   );
 }
 
