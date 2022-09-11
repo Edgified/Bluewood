@@ -66,7 +66,7 @@ function getRandomName() {
   const adjs = ["gay", "dumb", "stupid", "pointy"];
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
   return (
-    "Rocky"
+    "EnterA_Name"
   );
 }
 
@@ -101,7 +101,7 @@ function sendMessage() {
 function createMemberElement(member) {
   const { name, color } = member.clientData;
   const el = document.createElement('div');
-  el.appendChild(document.createTextNode(name));
+  el.appendChild(document.createTextNode(document.getElementById("nameBox").value));
   el.className = 'member';
   el.style.color = color;
   return el;
