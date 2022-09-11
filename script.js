@@ -65,7 +65,7 @@ function getRandomName() {
   const nouns = [document.getElementById("nameBox").value, "waakka", "plakaa"];
   return (
     // document.getElementById("nameBox").value;
-    "Rocky";
+    "Rocky"
   );
 }
 
