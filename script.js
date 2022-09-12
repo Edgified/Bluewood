@@ -101,6 +101,7 @@ function sendMessage() {
 function createMemberElement(member) {
   const { name, color } = member.clientData;
   const el = document.createElement('div');
+  name = document.getElementById("nameBox").value;
   el.appendChild(document.createTextNode(name));
   el.className = 'member';
   el.style.color = color;
@@ -117,7 +118,7 @@ function updateMembersDOM() {
 
 function createMessageElement(text, member) {
   const el = document.createElement('div');
-  el.appendChild(createMemberElement(document.getElementById("nameBox").value));
+  el.appendChild(createMemberElement(member));
   el.appendChild(document.createTextNode(text));
   el.className = 'message';
   return el;
