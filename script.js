@@ -59,6 +59,7 @@ drone.on('error', error => {
 });
 
 function changeColor() {
+  alert(document.body.style.backgroundColor);
   if(document.body.style.backgroundColor == rgb(255,255,255)) {
     document.body.style.backgroundColor = rgb(30,33,36);
   } else {
