@@ -1,9 +1,6 @@
-
-var myGamePiece;
-var myGamePiece2;
+const objects = [new object(100, 100, "purple", 400, 0), new object(100, 100, "purple", 900, 0)];
+var player = objects[0];
 function startGame() {
-    myGamePiece = new component(100, 100, "purple", 600, 0);
-    myGamePiece2 = new component(100, 100, "orange", 400, 0);
     myGameArea.start();
 }
 
@@ -25,10 +22,11 @@ var myGameArea = {
     }
 }
 
-function component(width, height, color, x, y, type) {
+function object(width, height, color, x, y, gravity, type) {
   this.type = type;
   this.width = width;
   this.height = height;
+  this.color = color;
   this.x = x;
   this.y = y;
   this.speedX = 0;
@@ -38,19 +36,28 @@ function component(width, height, color, x, y, type) {
   this.bounce = 0;
   this.update = function() {
     ctx = myGameArea.context;
-    ctx.fillStyle = color;
+    ctx.fillStyle = this.color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
   this.newPos = function() {
         this.gravitySpeed += this.gravity;
         this.x += this.speedX;
         this.y += this.speedY + this.gravitySpeed;
-        this.hitBottom();
+        this.hitCollision();
     }
-  this.hitBottom = function() {
+  this.hitCollision = function() {
         var rockbottom = myGameArea.canvas.height - this.height;
-        if (this.y > rockbottom) {
+        var rockSide = myGameArea.canvas.width - this.width;
+        var rock = objects[1];
+        if((this.x) == rock.x - rock.width) {
+            this.color = "orange";
+        }
+        if(this.y > rockbottom) {
             this.y = rockbottom;
+            this.gravitySpeed = -(this.gravitySpeed * this.bounce);
+        }
+        if(this.y < 0) {
+            this.y = 0;
             this.gravitySpeed = -(this.gravitySpeed * this.bounce);
         }
   }
@@ -58,31 +65,34 @@ function component(width, height, color, x, y, type) {
     
     document.addEventListener("keydown", function(event) {
   if (event.key == "d") {
-      moveObjectByX(1);
+      moveObjectByX(5);
   } else if(event.key == "a") {
-      moveObjectByX(-1);
-  } else if(event.key == " ") {
-      myGamePiece.gravity = -0.05;
-      myGamePiece.gravitySpeed = -5;
-      setTimeout(function() {myGamePiece.gravity = 0.3;}, 500);
+      moveObjectByX(-5);
+  } else if(event.key == " " && player.y == myGameArea.canvas.height - player.height) {
+      player.gravity = -0.05;
+      player.gravitySpeed = -6;
+      setTimeout(function() {player.gravity = 0.45;}, 300);
+  } else if(event.key == "5") {
+      alert(player.y);
   }
 });
 
 document.addEventListener("keyup", function(event) {
- if (event.key == "d") {
-      myGamePiece.speedX = 0;
-  } else if(event.key == "a") {
-      myGamePiece.speedX = 0;
+ if (event.key == "d" && player.speedX > 0) {
+      player.speedX = 0;
+  } else if(event.key == "a" && player.speedX < 0) {
+      player.speedX = 0;
   }
 });
 
 function moveObjectByX(y) {
-    myGamePiece.speedX = 5 * y;
+    player.speedX = 2.5 * y;
 }
     
 function updateGameArea() {
     myGameArea.clear();
-    myGamePiece.newPos();
-    myGamePiece.update();
-    myGamePiece2.newPos();
+    objects[0].newPos();
+    objects[0].update();
+    objects[1].newPos();
+    objects[1].update();
 }
